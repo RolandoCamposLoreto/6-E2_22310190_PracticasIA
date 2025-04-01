@@ -1,4 +1,4 @@
-# Repositorio de prácticas IA ------------------------------------->
+# Repositorio de prácticas IA ---------------------------->
 
 ![alt-text](IA.webp "Hover text")
 
