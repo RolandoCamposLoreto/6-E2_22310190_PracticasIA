@@ -1,6 +1,7 @@
 # Repositorio de prácticas IA ------------------------------------->
 
-![alt-text](C:\Users\ingro\Downloads\IA.webp "Hover text")
+![alt-text](IA.webp "Hover text")
+
 Repositorio para la clase de IA, Prácticas donde aprenderemos sobre diversos enfoques (Búsqueda de grafos, Lógica y Probabilidad "Incertidumbre")
 
 ## Alumno:   
