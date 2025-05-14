@@ -1,17 +1,25 @@
-import random
+import random  # Importa el módulo random para generar números aleatorios, utilizados para asignar valores aleatorios a las variables del CSP.
+
 def acondicionamiento_del_corte(csp, max_iteraciones):
-    """Limita la exploración de soluciones mediante un corte en la profundidad."""
-    iteraciones = 0
-    estado_actual = {}
+    """
+    Limita la exploración de soluciones mediante un corte en la profundidad.
+    Realiza una búsqueda con asignación aleatoria de valores a las variables hasta
+    alcanzar un número máximo de iteraciones o encontrar una solución válida.
+    """
     
+    iteraciones = 0  # Inicializa el contador de iteraciones, para limitar la profundidad de la búsqueda
+    estado_actual = {}  # Diccionario que almacenará el estado de las asignaciones de las variables
+    
+    # Ciclo principal de la búsqueda, que se ejecuta hasta alcanzar el número máximo de iteraciones.
     while iteraciones < max_iteraciones:
-        # Realiza la búsqueda con un corte en la profundidad
-        if csp.es_objetivo(estado_actual):
-            return estado_actual
-        # Realiza las asignaciones y verifica las restricciones
+        if csp.es_objetivo(estado_actual):  # Si el estado actual es una solución válida
+            return estado_actual  # Devuelve el estado actual si cumple con el objetivo
+        
+        # Asigna valores aleatorios a las variables que aún no tienen un valor asignado
         for variable in csp.variables:
-            if variable not in estado_actual:
-                estado_actual[variable] = random.choice(csp.dominios[variable])
-        iteraciones += 1
+            if variable not in estado_actual:  # Si la variable aún no tiene asignado un valor
+                estado_actual[variable] = random.choice(csp.dominios[variable])  # Asigna un valor aleatorio desde su dominio
+        
+        iteraciones += 1  # Incrementa el contador de iteraciones
     
-    return None  # Si alcanza el número máximo de iteraciones, retorna None
+    return None  # Si no se alcanza el objetivo en el número máximo de iteraciones, retorna None

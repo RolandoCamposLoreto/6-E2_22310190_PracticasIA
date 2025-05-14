@@ -1,5 +1,8 @@
-import random
+import random # Importa el módulo random para generar números aleatorios (por ejemplo, para decisiones probabilísticas).
 
+# Define la función que implementa un algoritmo genético, una técnica de búsqueda basada en la evolución natural.
+# Mantiene una población de posibles soluciones (estados), y las mejora a través de operadores genéticos como
+# selección, cruza (crossover) y mutación, durante varias generaciones, buscando optimizar la heurística.
 def algoritmo_genetico(estado_inicial, obtener_heuristica, obtener_vecinos, poblacion_size=100, generaciones=100):
     # Inicializamos la población con el estado inicial
     poblacion = [estado_inicial] * poblacion_size  
