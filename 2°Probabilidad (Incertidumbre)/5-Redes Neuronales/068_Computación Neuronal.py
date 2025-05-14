@@ -1,36 +1,39 @@
+# Importamos NumPy para manejar arreglos y operaciones matemáticas
 import numpy as np
 
-# Función de activación
+# Definimos la función de activación sigmoide
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
-# Derivada de la función sigmoide
+# Derivada de la función sigmoide, necesaria para retropropagación
 def sigmoid_derivative(x):
     return x * (1 - x)
 
-# Entrada y salida
-X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Entradas (XOR)
-y = np.array([[0], [1], [1], [0]])  # Salidas esperadas
+# === Entradas y salidas para el problema XOR ===
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Conjunto de entrada (XOR)
+y = np.array([[0], [1], [1], [0]])              # Salidas esperadas
 
-# Inicialización de pesos
-np.random.seed(1)
-weights = np.random.rand(X.shape[1], 1)
+# === Inicialización de los pesos ===
+np.random.seed(1)  # Semilla para reproducibilidad
+weights = np.random.rand(X.shape[1], 1)  # Pesos aleatorios (2 entradas → 1 salida)
 
 # Tasa de aprendizaje
 learning_rate = 0.1
 
-# Entrenamiento de la neurona
+# === Entrenamiento de la red neuronal (una sola neurona) ===
 for epoch in range(10000):
     # Propagación hacia adelante
-    output = sigmoid(np.dot(X, weights))
+    output = sigmoid(np.dot(X, weights))  # Calcular activación con pesos actuales
     
-    # Cálculo del error
+    # Calcular el error (diferencia entre salida esperada y actual)
     error = y - output
     
-    # Propagación hacia atrás (ajuste de pesos)
+    # Ajuste de pesos basado en el error y la derivada de la función sigmoide
     adjustments = error * sigmoid_derivative(output)
+    
+    # Actualización de pesos usando el gradiente descendente
     weights += np.dot(X.T, adjustments) * learning_rate
 
-# Resultado final
+# === Resultados después del entrenamiento ===
 print("Pesos finales: \n", weights)
 print("Salida final después de entrenamiento: \n", output)
