@@ -1,3 +1,6 @@
+# Define la función del algoritmo de búsqueda online, que toma decisiones paso a paso
+# basadas en la información disponible en tiempo real, sin tener conocimiento completo del entorno.
+# Es útil cuando el agente debe actuar sin conocer todo el espacio de estados desde el inicio.
 def busqueda_online(estado_inicial, obtener_heuristica, obtener_vecinos):
     # Comienza desde el estado inicial
     estado_actual = estado_inicial

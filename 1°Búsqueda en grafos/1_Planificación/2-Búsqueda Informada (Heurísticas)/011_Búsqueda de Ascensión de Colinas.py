@@ -1,4 +1,4 @@
-def busqueda_ascension_colinas(estado_inicial, estado_objetivo, obtener_heuristica, obtener_vecinos):
+def busqueda_ascension_colinas(estado_inicial, estado_objetivo, obtener_heuristica, obtener_vecinos): # Función que implementa el algoritmo de ascensión de colinas usando heurística y vecinos
     estado_actual = estado_inicial  # Empezamos con el estado inicial
     
     while True:  # Continuamos el proceso hasta encontrar un máximo local

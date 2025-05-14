@@ -1,4 +1,4 @@
-def busqueda_tabu(estado_inicial, obtener_heuristica, obtener_vecinos, max_iteraciones=100):
+def busqueda_tabu(estado_inicial, obtener_heuristica, obtener_vecinos, max_iteraciones=100): # Función que realiza búsqueda tabú con heurística, vecinos y límite de iteraciones.
     estado_actual = estado_inicial  # Comenzamos con el estado inicial
     tabu_list = set()  # Inicializamos la lista Tabú, que evitará regresar a ciertos estados
 

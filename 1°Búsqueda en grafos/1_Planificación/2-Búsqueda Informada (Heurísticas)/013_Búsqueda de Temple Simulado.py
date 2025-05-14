@@ -1,10 +1,8 @@
-import random
-import math
+import random  # Importa el módulo random para generar números aleatorios (por ejemplo, para decisiones probabilísticas).
+import math    # Importa el módulo math para funciones matemáticas, como exponenciales y logaritmos.
 
-import random
-import math
 
-def busqueda_temple_simulado(estado_inicial, obtener_heuristica, obtener_vecinos, temperatura_inicial=1000, tasa_enfriamiento=0.995):
+def busqueda_temple_simulado(estado_inicial, obtener_heuristica, obtener_vecinos, temperatura_inicial=1000, tasa_enfriamiento=0.995): # Implementa el algoritmo de Temple Simulado (Simulated Annealing), una técnica de optimización    basada en el enfriamiento térmico de metales, que permite aceptar soluciones peores con cierta probabilidad     para evitar quedarse atrapado en óptimos locales.
     estado_actual = estado_inicial  # Comenzamos con el estado inicial
     mejor_estado = estado_inicial  # El mejor estado encontrado inicialmente es el estado inicial
     mejor_heuristica = obtener_heuristica(estado_inicial)  # Calculamos la heurística del estado inicial

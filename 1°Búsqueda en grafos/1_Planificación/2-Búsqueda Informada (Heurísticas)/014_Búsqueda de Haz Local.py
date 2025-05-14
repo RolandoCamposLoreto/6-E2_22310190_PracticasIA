@@ -1,3 +1,6 @@
+# Define la función del algoritmo de búsqueda por haz local (local beam search),
+# el cual mantiene k trayectorias (estados) simultáneamente y las actualiza en cada iteración
+# con los mejores vecinos, buscando converger al mejor estado posible sin quedarse atrapado en óptimos locales.
 def busqueda_haz_local(estado_inicial, obtener_heuristica, obtener_vecinos, k=5, max_iteraciones=100):
     frontera = [estado_inicial]  # Inicializamos la frontera con el estado inicial
     
